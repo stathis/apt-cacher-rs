@@ -308,7 +308,6 @@ assets = [
 ]
 section = "net"
 depends = "$auto, adduser"
-conflicts = "apt-cacher, apt-cacher-ng"
 extended-description = """\
 apt-cacher-rs is a caching HTTP proxy for APT-style package repositories,
 written in Rust. It sits between APT clients and upstream Debian or Ubuntu
@@ -322,6 +321,6 @@ multiple machines."""
 maintainer-scripts = "debian/"
 changelog = "debian/changelog"
 license-file = ["LICENSE", "0"]
-systemd-units = { enable = true, start = true }
+systemd-units = { enable = false, start = false }
 default-features = false
-features = ["hyper", "tls_hyper", "sendfile"]
+features = ["hyper", "tls_rustls", "sendfile"]
